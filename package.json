@@ -1,0 +1,12 @@
+{
+  "name": "11may-ey-devinai-training",
+  "version": "1.0.0",
+  "description": "Starter Express.js Node server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
