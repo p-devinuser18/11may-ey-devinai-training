@@ -1,0 +1,26 @@
+{
+  "1": {
+    "name": "Alice Smith",
+    "email": "alice@example.com",
+    "avatarUrl": "https://example.com/avatars/alice.png",
+    "joinDate": "2024-01-15"
+  },
+  "2": {
+    "name": "Bob Jones",
+    "email": "bob@example.com",
+    "avatarUrl": "https://example.com/avatars/bob.png",
+    "joinDate": "2024-03-22"
+  },
+  "3": {
+    "name": "Charlie Davis",
+    "email": "charlie@example.com",
+    "avatarUrl": "https://example.com/avatars/charlie.png",
+    "joinDate": "2024-06-10"
+  },
+  "4": {
+    "name": "Emily Carter",
+    "email": "diana@example.com",
+    "avatarUrl": "https://example.com/avatars/diana.png",
+    "joinDate": "2024-09-05"
+  }
+}
