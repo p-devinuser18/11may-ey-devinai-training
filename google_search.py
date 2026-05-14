@@ -1,7 +1,7 @@
 import sys
-from googlesearch import search
 import requests
 from bs4 import BeautifulSoup
+from ddgs import DDGS
 
 
 def fetch_page_snippet(url: str, max_length: int = 500) -> str:
@@ -21,11 +21,15 @@ def fetch_page_snippet(url: str, max_length: int = 500) -> str:
         return "(Could not fetch page content)"
 
 
-def search_google(query: str, num_results: int = 5) -> list[dict]:
+def search_web(query: str, num_results: int = 5) -> list[dict]:
     results = []
-    for url in search(query, num_results=num_results):
-        snippet = fetch_page_snippet(url)
-        results.append({"url": url, "snippet": snippet})
+    with DDGS() as ddgs:
+        for result in ddgs.text(query, max_results=num_results):
+            results.append({
+                "title": result.get("title", ""),
+                "url": result.get("href", ""),
+                "snippet": result.get("body", ""),
+            })
     return results
 
 
@@ -33,7 +37,7 @@ def display_results(query: str, results: list[dict]) -> None:
     print(f"\nSearch results for: '{query}'\n")
     print("=" * 60)
     for i, result in enumerate(results, 1):
-        print(f"\nResult {i}:")
+        print(f"\nResult {i}: {result['title']}")
         print(f"  URL: {result['url']}")
         print(f"  Summary: {result['snippet']}")
         print("-" * 60)
@@ -49,8 +53,8 @@ def main():
         print("No query provided. Exiting.")
         return
 
-    print(f"Searching Google for: '{query}'...")
-    results = search_google(query)
+    print(f"Searching the web for: '{query}'...")
+    results = search_web(query)
 
     if results:
         display_results(query, results)
