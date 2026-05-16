@@ -31,6 +31,7 @@ describe("GET /api/categories", () => {
     expect(res.body).toContain("books");
     expect(res.body).toContain("clothing");
     expect(res.body).toContain("electronics");
+    expect(res.body).toContain("outdoors");
   });
 
   it("should return exactly 3 categories", async () => {
