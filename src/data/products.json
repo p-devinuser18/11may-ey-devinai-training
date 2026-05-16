@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "category": "electronics",
+    "price": 29.99
+  },
+  {
+    "id": 2,
+    "name": "JavaScript: The Good Parts",
+    "category": "books",
+    "price": 25.0
+  },
+  {
+    "id": 3,
+    "name": "Running Shoes",
+    "category": "sports",
+    "price": 89.99
+  },
+  {
+    "id": 4,
+    "name": "Mechanical Keyboard",
+    "category": "electronics",
+    "price": 74.99
+  },
+  {
+    "id": 5,
+    "name": "Yoga Mat",
+    "category": "sports",
+    "price": 19.99
+  },
+  {
+    "id": 6,
+    "name": "Clean Code",
+    "category": "books",
+    "price": 34.99
+  },
+  {
+    "id": 7,
+    "name": "Cotton T-Shirt",
+    "category": "clothing",
+    "price": 15.99
+  },
+  {
+    "id": 8,
+    "name": "Blender",
+    "category": "home",
+    "price": 49.99
+  }
+]
