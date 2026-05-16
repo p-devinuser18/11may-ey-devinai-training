@@ -8,7 +8,7 @@ describe("GET /api/products", () => {
 
     expect(res.status).toBe(200);
     expect(res.body).toEqual(products);
-    expect(res.body.length).toBe(6);
+    expect(res.body.length).toBe(7);
   });
 
   it("should return JSON content type", async () => {
@@ -48,7 +48,7 @@ describe("GET /api/products", () => {
   });
 
   it("should return empty array for non-existent category", async () => {
-    const res = await request(app).get("/api/products?category=toys");
+    const res = await request(app).get("/api/products?category=furniture");
 
     expect(res.status).toBe(200);
     expect(res.body).toEqual([]);

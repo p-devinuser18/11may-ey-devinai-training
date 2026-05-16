@@ -31,10 +31,10 @@ describe("GET /api/categories", () => {
     expect(res.body).toContain("books");
     expect(res.body).toContain("clothing");
     expect(res.body).toContain("electronics");
-    expect(res.body).toContain("outdoors");
+    expect(res.body).toContain("toys");
   });
 
-  it("should return exactly 3 categories", async () => {
+  it("should return exactly 4 categories", async () => {
     const res = await request(app).get("/api/categories");
 
     expect(res.body.length).toBe(4);

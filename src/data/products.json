@@ -38,7 +38,14 @@
     "id": 6,
     "name": "Winter Jacket",
     "price": 129.99,
-    "category": "outdoors",
+    "category": "clothing",
     "inStock": false
+  },
+  {
+    "id": 7,
+    "name": "Building Blocks Set",
+    "price": 24.99,
+    "category": "toys",
+    "inStock": true
   }
 ]
