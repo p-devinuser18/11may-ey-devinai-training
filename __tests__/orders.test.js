@@ -155,7 +155,7 @@ describe("GET /api/orders/:id", () => {
 
     expect(res.statusCode).toBe(200);
     expect(res.body).toEqual(orders[0]);
-    expect(res.body.id).toBe(1);
+    expect(res.body.id).toBe("1");
   });
 
   it("should return 404 for non-existent order id", async () => {
@@ -165,7 +165,7 @@ describe("GET /api/orders/:id", () => {
     expect(res.body).toHaveProperty("error");
   });
 
-  it("should return 404 for invalid order id", async () => {
+  it("should return 404 for non-matching order id", async () => {
     const res = await request(app).get("/api/orders/abc");
 
     expect(res.statusCode).toBe(404);

@@ -33,7 +33,7 @@ router.get("/:id", (req, res) => {
     "utf-8",
   );
   const orders = JSON.parse(data);
-  const order = orders.find((o) => o.id === parseInt(req.params.id, 10));
+  const order = orders.find((o) => o.id === req.params.id);
 
   if (!order) {
     return res.status(404).json({ error: "Order not found" });
