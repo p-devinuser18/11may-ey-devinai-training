@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "productId": 101,
+    "quantity": 2,
+    "totalPrice": 49.98,
+    "status": "pending",
+    "createdAt": "2025-01-15T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "productId": 102,
+    "quantity": 1,
+    "totalPrice": 29.99,
+    "status": "shipped",
+    "createdAt": "2025-01-16T14:20:00Z"
+  },
+  {
+    "id": 3,
+    "productId": 103,
+    "quantity": 3,
+    "totalPrice": 89.97,
+    "status": "delivered",
+    "createdAt": "2025-01-17T09:15:00Z"
+  },
+  {
+    "id": 4,
+    "productId": 101,
+    "quantity": 1,
+    "totalPrice": 24.99,
+    "status": "pending",
+    "createdAt": "2025-01-18T16:45:00Z"
+  },
+  {
+    "id": 5,
+    "productId": 104,
+    "quantity": 5,
+    "totalPrice": 149.95,
+    "status": "shipped",
+    "createdAt": "2025-01-19T11:00:00Z"
+  }
+]
