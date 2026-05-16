@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "price": 29.99,
+    "category": "electronics",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Bluetooth Keyboard",
+    "price": 59.99,
+    "category": "electronics",
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "USB-C Hub",
+    "price": 39.99,
+    "category": "electronics",
+    "inStock": false
+  },
+  {
+    "id": 4,
+    "name": "JavaScript: The Good Parts",
+    "price": 25.0,
+    "category": "books",
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "name": "Clean Code",
+    "price": 35.0,
+    "category": "books",
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "name": "Cotton T-Shirt",
+    "price": 19.99,
+    "category": "clothing",
+    "inStock": true
+  },
+  {
+    "id": 7,
+    "name": "Running Shoes",
+    "price": 89.99,
+    "category": "clothing",
+    "inStock": false
+  }
+]
