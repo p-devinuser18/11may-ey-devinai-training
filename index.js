@@ -2,6 +2,7 @@ const express = require("express");
 const healthRouter = require("./src/routes/health");
 const productsRouter = require("./src/routes/products");
 const categoriesRouter = require("./src/routes/categories");
+const weatherRouter = require("./src/routes/weather");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
 app.use("/health", healthRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/categories", categoriesRouter);
+app.use("/api/weather", weatherRouter);
 
 if (require.main === module) {
   app.listen(PORT, () => {
