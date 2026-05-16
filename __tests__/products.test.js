@@ -10,6 +10,7 @@ describe("GET /api/products", () => {
     expect(res.body.length).toBeGreaterThanOrEqual(6);
     res.body.forEach((product) => {
       expect(product).toHaveProperty("id");
+      expect(typeof product.id).toBe("string");
       expect(product).toHaveProperty("name");
       expect(product).toHaveProperty("price");
       expect(product).toHaveProperty("category");
