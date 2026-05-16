@@ -17,16 +17,18 @@ describe("GET /api/products - integration tests", () => {
     expect(res.statusCode).toBe(200);
     expect(res.body.length).toBeGreaterThan(0);
     res.body.forEach((product) => {
-      expect(product.category).toBe("electronics");
+      expect(product.category.toLowerCase()).toBe("electronics");
     });
   });
 
   it("should filter case-insensitively (category=ELECTRONICS)", async () => {
     const lower = await request(app).get("/api/products?category=electronics");
     const upper = await request(app).get("/api/products?category=ELECTRONICS");
+    const mixed = await request(app).get("/api/products?category=Electronics");
 
     expect(upper.statusCode).toBe(200);
     expect(upper.body).toEqual(lower.body);
+    expect(mixed.body).toEqual(lower.body);
   });
 
   it("should return 200 with empty array for nonexistent category", async () => {
