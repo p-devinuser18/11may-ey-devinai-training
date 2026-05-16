@@ -47,6 +47,16 @@ describe("GET /api/products", () => {
     });
   });
 
+  it("should return same results regardless of category casing", async () => {
+    const lower = await request(app).get("/api/products?category=clothing");
+    const upper = await request(app).get("/api/products?category=CLOTHING");
+    const mixed = await request(app).get("/api/products?category=Clothing");
+
+    expect(lower.body).toEqual(upper.body);
+    expect(lower.body).toEqual(mixed.body);
+    expect(lower.body.length).toBe(2);
+  });
+
   it("should return empty array for non-existent category", async () => {
     const res = await request(app).get("/api/products?category=toys");
 
