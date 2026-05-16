@@ -1,0 +1,9 @@
+[
+  { "id": 1, "name": "Laptop", "category": "electronics", "price": 999.99 },
+  { "id": 2, "name": "Smartphone", "category": "electronics", "price": 699.99 },
+  { "id": 3, "name": "Novel", "category": "books", "price": 14.99 },
+  { "id": 4, "name": "Textbook", "category": "books", "price": 49.99 },
+  { "id": 5, "name": "T-Shirt", "category": "clothing", "price": 19.99 },
+  { "id": 6, "name": "Blender", "category": "home", "price": 39.99 },
+  { "id": 7, "name": "Action Figure", "category": "toys", "price": 12.99 }
+]
