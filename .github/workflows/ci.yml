@@ -24,20 +24,10 @@ jobs:
         run: npm ci
 
       - name: Run linting
-        run: |
-          if npm run lint --if-present 2>/dev/null; then
-            echo "Lint completed"
-          else
-            echo "No lint script found, skipping"
-          fi
+        run: npm run lint --if-present
 
       - name: Run tests
         run: npm test
 
       - name: Run build
-        run: |
-          if npm run build --if-present 2>/dev/null; then
-            echo "Build completed"
-          else
-            echo "No build script found, skipping"
-          fi
+        run: npm run build --if-present
