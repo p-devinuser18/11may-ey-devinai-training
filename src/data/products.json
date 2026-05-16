@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "price": 79.99,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Smartphone Case",
+    "price": 19.99,
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "JavaScript: The Good Parts",
+    "price": 29.99,
+    "category": "Books",
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "name": "Clean Code",
+    "price": 34.99,
+    "category": "Books",
+    "inStock": false
+  },
+  {
+    "id": 5,
+    "name": "Running Shoes",
+    "price": 89.99,
+    "category": "Clothing",
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "name": "Winter Jacket",
+    "price": 129.99,
+    "category": "Clothing",
+    "inStock": false
+  }
+]
