@@ -5,8 +5,7 @@ const fs = require("fs");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  const data = fs.readFileSync(
-    path.join(__dirname, "../data/products.json"),
+  const data = fs.readFileSync('./src/data/products.json'),
     "utf-8",
   );
   const products = JSON.parse(data);
@@ -14,12 +13,11 @@ router.get("/", (req, res) => {
 
   if (category) {
     const filtered = products.filter(
-      (p) => p.category.toLowerCase() === category.toLowerCase(),
+      (p) => p.category === category
     );
     return res.json(filtered);
   }
 
-  res.json(products);
 });
 
 module.exports = router;
