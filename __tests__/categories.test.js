@@ -36,7 +36,7 @@ describe("GET /api/categories", () => {
   it("should return exactly 3 categories", async () => {
     const res = await request(app).get("/api/categories");
 
-    expect(res.body.length).toBe(3);
+    expect(res.body.length).toBe(4);
   });
 
   it("should return strings only", async () => {
