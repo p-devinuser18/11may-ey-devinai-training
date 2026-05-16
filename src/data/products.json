@@ -40,5 +40,12 @@
     "price": 129.99,
     "category": "clothing",
     "inStock": false
+  },
+  {
+    "id": 7,
+    "name": "Building Blocks Set",
+    "price": 24.99,
+    "category": "toys",
+    "inStock": true
   }
 ]
