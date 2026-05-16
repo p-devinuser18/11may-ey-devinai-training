@@ -5,7 +5,12 @@ const router = express.Router();
 router.get("/:city", async (req, res) => {
   const { city } = req.params;
   const apiKey = process.env.WEATHER_API_KEY;
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
+  const params = new URLSearchParams({
+    q: city,
+    appid: apiKey,
+    units: "metric",
+  });
+  const url = `https://api.openweathermap.org/data/2.5/weather?${params}`;
 
   try {
     const response = await fetch(url, {
