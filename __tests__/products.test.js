@@ -61,6 +61,31 @@ describe("GET /api/products", () => {
     expect(res.body).toEqual([]);
   });
 
+  it("should return total count matching products.json", async () => {
+    const res = await request(app).get("/api/products");
+
+    expect(res.status).toBe(200);
+    expect(res.body.length).toBe(products.length);
+  });
+
+  it("should have boolean inStock values for all products", async () => {
+    const res = await request(app).get("/api/products");
+
+    expect(res.status).toBe(200);
+    res.body.forEach((product) => {
+      expect(typeof product.inStock).toBe("boolean");
+    });
+  });
+
+  it("should respond in less than 200ms", async () => {
+    const start = Date.now();
+    const res = await request(app).get("/api/products");
+    const duration = Date.now() - start;
+
+    expect(res.status).toBe(200);
+    expect(duration).toBeLessThan(200);
+  });
+
   it("should return products with correct shape", async () => {
     const res = await request(app).get("/api/products");
 
