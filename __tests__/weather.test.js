@@ -100,8 +100,14 @@ describe("GET /api/weather/:city", () => {
 
     await request(app).get("/api/weather/London");
 
-    expect(global.fetch).toHaveBeenCalledWith(
-      "https://api.openweathermap.org/data/2.5/weather?q=London&appid=test-api-key&units=metric",
+    const calledUrl = global.fetch.mock.calls[0][0].toString();
+    expect(calledUrl).toContain("q=London");
+    expect(calledUrl).toContain("test-api-key");
+    expect(calledUrl).toContain("units=metric");
+    expect(calledUrl).toMatch(
+      /^https:\/\/api\.openweathermap\.org\/data\/2\.5\/weather/,
+    );
+    expect(global.fetch.mock.calls[0][1]).toEqual(
       expect.objectContaining({ signal: expect.any(AbortSignal) }),
     );
 

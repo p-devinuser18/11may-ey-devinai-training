@@ -6,7 +6,10 @@ router.get("/:city", async (req, res) => {
   const city = req.params.city;
   const apiKey = process.env.WEATHER_API_KEY;
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
+  const url = new URL("https://api.openweathermap.org/data/2.5/weather");
+  url.searchParams.set("q", city);
+  url.searchParams.set("appid", apiKey);
+  url.searchParams.set("units", "metric");
 
   try {
     const response = await fetch(url, { signal: AbortSignal.timeout(5000) });
