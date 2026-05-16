@@ -1,5 +1,6 @@
 const request = require("supertest");
 const app = require("../index");
+const products = require("../src/data/products.json");
 
 describe("GET /api/products - integration tests", () => {
   it("should return 200 with all products", async () => {
@@ -61,5 +62,30 @@ describe("GET /api/products - integration tests", () => {
     const res = await request(app).get("/api/products");
 
     expect(res.headers["content-type"]).toMatch(/application\/json/);
+  });
+
+  it("should return total count matching products.json", async () => {
+    const res = await request(app).get("/api/products");
+
+    expect(res.statusCode).toBe(200);
+    expect(res.body.length).toBe(products.length);
+  });
+
+  it("should have boolean inStock values for all products", async () => {
+    const res = await request(app).get("/api/products");
+
+    expect(res.statusCode).toBe(200);
+    res.body.forEach((product) => {
+      expect(typeof product.inStock).toBe("boolean");
+    });
+  });
+
+  it("should respond in less than 200ms", async () => {
+    const start = Date.now();
+    const res = await request(app).get("/api/products");
+    const duration = Date.now() - start;
+
+    expect(res.statusCode).toBe(200);
+    expect(duration).toBeLessThan(200);
   });
 });
